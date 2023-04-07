@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+const colors = require("./tailwindcss/colors.js");
+
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   presets: [],
@@ -130,35 +131,7 @@ module.exports = {
       200: '2',
     },
     caretColor: ({ theme }) => theme('colors'),
-    colors: ({ colors }) => ({
-      inherit: colors.inherit,
-      current: colors.current,
-      transparent: colors.transparent,
-      black: colors.black,
-      white: colors.white,
-      slate: colors.slate,
-      gray: colors.gray,
-      zinc: colors.zinc,
-      neutral: colors.neutral,
-      stone: colors.stone,
-      red: colors.red,
-      orange: colors.orange,
-      amber: colors.amber,
-      yellow: colors.yellow,
-      lime: colors.lime,
-      green: colors.green,
-      emerald: colors.emerald,
-      teal: colors.teal,
-      cyan: colors.cyan,
-      sky: colors.sky,
-      blue: colors.blue,
-      indigo: colors.indigo,
-      violet: colors.violet,
-      purple: colors.purple,
-      fuchsia: colors.fuchsia,
-      pink: colors.pink,
-      rose: colors.rose,
-    }),
+    colors: (colors),
     columns: {
       auto: 'auto',
       1: '1',
@@ -251,8 +224,8 @@ module.exports = {
       none: '0 0 #0000',
     },
     fill: ({ theme }) => ({
-      none: 'none',
-      ...theme('colors'),
+      current: "currentColor",
+      ...colors,
     }),
     flex: {
       1: '1 1 0%',
@@ -300,22 +273,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
-      sans: [
-        'ui-sans-serif',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
+      sans: ['Poppins'],
       serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
         'ui-monospace',
