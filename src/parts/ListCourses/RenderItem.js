@@ -5,7 +5,6 @@ import Link from "next/link";
 import IconPlay from "public/images/icon-play.svg";
 
 export default function RenderItem({ item }) {
-    console.log(item);
     return (
         <div className="w-full md:w-1/4 px-4 mb-6">
             <div className="item relative">
