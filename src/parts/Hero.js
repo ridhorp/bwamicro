@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from "react";
 
 export default function Hero() {
-
+    const [state, setstate] = useState(() => "");
 
     function submit() {
         window.open(
@@ -9,9 +9,9 @@ export default function Hero() {
         );
     }
     return (
-        <div className='flex justify-between items-center'>
-            <div className='w-full md:w-1/2 mt-8 md:mt-0'>
-                <h1 className="text-5xl text-white mb-5">
+        <div className="flex justify-between items-center">
+            <div className="w-full md:w-1/2 mt-8 md:mt-0">
+                <h1 className="text-5xl text-white mb-5 font-semibold">
                     <span className="text-teal-400">The New</span> Way to
                     <br className="hidden md:block" /> Achieve Good{" "}
                     <span className="text-teal-400">Skills</span>
@@ -20,12 +20,13 @@ export default function Hero() {
                     We provide tons of pathskill that you{" "}
                     <br className="hidden md:block" /> can choose and focus on
                 </p>
+
                 <form onSubmit={submit} className="flex">
                     <input
                         type="text"
-
+                        onChange={(event) => setstate(event.target.value)}
                         className="bg-white focus:outline-none border-0 px-4 md:px-6 py-3 w-full md:w-1/2"
-
+                        value={state}
                         placeholder="Your email addres"
                     />
                     <button className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-4 md:px-6 py-3 whitespace-no-wrap">
@@ -57,5 +58,5 @@ export default function Hero() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
